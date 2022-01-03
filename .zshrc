@@ -9,11 +9,12 @@ bindkey "^[[1;5C" forward-word
 bindkey "^[[1;5D" backward-word
 #alias ll="ls -lahG"
 alias ll="exa -lh"
-alias ls="exa"
-alias grep="rg"
 alias cat="bat"
 alias dotfiles='/usr/local/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+alias k=kubectl
+export do="-o yaml --dry-run=client "
 #PROMPT='%B%F{75}%1~%f%b %# '
 source /usr/local/opt/powerlevel10k/powerlevel10k.zsh-theme
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+

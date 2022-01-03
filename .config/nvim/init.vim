@@ -3,9 +3,10 @@
 
 " colorscheme
 colorscheme gruvbox
-autocmd ColorScheme * highlight Normal ctermbg=none
+"autocmd ColorScheme * highlight Normal ctermbg=none guibg=none
 autocmd ColorScheme * highlight MatchParen cterm=bold ctermbg=none ctermfg=magenta
-" set termguicolors " caused gruvbox bg become solid
+highlight Normal ctermbg=none guibg=none
+"set termguicolors " caused gruvbox bg become solid
 
 " Essentials
 set smartindent
@@ -16,8 +17,10 @@ filetype plugin indent on
 set tabstop=4       " The width of a TAB /t is set to 4.
 set shiftwidth=4    " Indents will have a width of 4
 set softtabstop=4   " Sets the number of columns for a TAB
+set expandtab
 set smartindent
 set nohlsearch
+set incsearch
 set nocompatible
 set hidden
 set scrolloff=7
@@ -46,7 +49,7 @@ let g:vimwiki_list = [{'path': '~/MEGAsync/vimwiki/', 'syntax': 'markdown', 'ext
 set conceallevel=2
 
 " Vim hardtime
-let g:hardtime_default_on = 1
+" let g:hardtime_default_on = 1
 
 " Launching nvim directly from command line window size fix
 autocmd VimEnter * :silent exec "!kill -s SIGWINCH $PPID"

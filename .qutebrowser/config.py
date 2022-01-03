@@ -1326,7 +1326,7 @@ c.fonts.default_size = '12pt'
 
 ## Characters used for hint strings.
 ## Type: UniqueCharString
-c.hints.chars = 'asdfghjklqwertyuiopzxcvbnm'
+c.hints.chars = 'asdfgqwertzxcvb'
 
 ## Dictionary file to be used by the word hints.
 ## Type: File
@@ -1384,7 +1384,8 @@ c.hints.chars = 'asdfghjklqwertyuiopzxcvbnm'
 ## hints.
 ## Type: Dict
 # c.hints.selectors = {'all': ['a', 'area', 'textarea', 'select', 'input:not([type="hidden"])', 'button', 'frame', 'iframe', 'img', 'link', 'summary', '[contenteditable]:not([contenteditable="false"])', '[onclick]', '[onmousedown]', '[role="link"]', '[role="option"]', '[role="button"]', '[ng-click]', '[ngClick]', '[data-ng-click]', '[x-ng-click]', '[tabindex]'], 'links': ['a[href]', 'area[href]', 'link[href]', '[role="link"][href]'], 'images': ['img'], 'media': ['audio', 'img', 'video'], 'url': ['[src]', '[href]'], 'inputs': ['input[type="text"]', 'input[type="date"]', 'input[type="datetime-local"]', 'input[type="email"]', 'input[type="month"]', 'input[type="number"]', 'input[type="password"]', 'input[type="search"]', 'input[type="tel"]', 'input[type="time"]', 'input[type="url"]', 'input[type="week"]', 'input:not([type])', '[contenteditable]:not([contenteditable="false"])', 'textarea']}
-
+c.hints.selectors["frame"] = ['div', 'header', 'section', 'nav']
+config.bind('<Alt-f>', 'hint frame', mode='normal')
 ## Make characters in hint strings uppercase.
 ## Type: Bool
 c.hints.uppercase = True
@@ -1966,7 +1967,7 @@ c.tabs.show = 'multiple'
 ## Page to open if :open -t/-b/-w is used without URL. Use `about:blank`
 ## for a blank page.
 ## Type: FuzzyUrl
-# c.url.default_page = 'https://start.duckduckgo.com/'
+c.url.default_page = 'about:blank'
 
 ## URL segments where `:navigate increment/decrement` will search for a
 ## number.
@@ -2003,14 +2004,15 @@ c.tabs.show = 'multiple'
 ## the search engine name to the search term, e.g. `:open google
 ## qutebrowser`.
 ## Type: Dict
-c.url.searchengines = {'DEFAULT': 'https://searx.rayssd.com/searx/search?q={}',
+c.url.searchengines = {'DEFAULT': 'https://lokiunifi.duckdns.org/search?q={}',
                        'kf': 'https://search.corp.mongodb.com/#q={}&sort=relevancy',
                        'docs': 'https://docs.mongodb.com/search/?q={}',
-                       'git': 'https://github.com/search?q={}&ref=opensearch'}
+                       'git': 'https://github.com/search?q={}&ref=opensearch',
+                       'searx': 'https://searx.rayssd.com/searx/search?q={}'}
 
 ## Page(s) to open at the start.
 ## Type: List of FuzzyUrl, or FuzzyUrl
-# c.url.start_pages = ['https://start.duckduckgo.com']
+c.url.start_pages = ['about:blank']
 
 ## URL parameters to strip with `:yank url`.
 ## Type: List of String
@@ -2024,7 +2026,7 @@ c.url.searchengines = {'DEFAULT': 'https://searx.rayssd.com/searx/search?q={}',
 ## Format to use for the window title. The same placeholders like for
 ## `tabs.title.format` are defined.
 ## Type: FormatString
-# c.window.title_format = '{perc}{current_title}{title_sep}qutebrowser'
+c.window.title_format = '{perc}{current_title}{title_sep}'
 
 ## Set the main window background to transparent.  This allows having a
 ## transparent tab- or statusbar (might require a compositor such as

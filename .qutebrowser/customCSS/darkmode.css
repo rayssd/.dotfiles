@@ -16,13 +16,13 @@ html * {
 }
 
 /* extra classes for mongo university */
-input, textarea, .enxecro3, .css-1l6jili {
+.servers-page-card-processes-list-row-cell, .dropdown-select, .Select-value, input, textarea, .enxecro3, .css-1l6jili {
 	background-color: #3c3836 !important;
 	background-image: none !important;
 	color: #e5e5e5 !important;
 }
 
-.button {
+button, .button, .comment-op {
 /*	background-color: #28292a !important;*/
 	background-image: none !important;
 /*	background-image: linear-gradient(#ffffff ,#efefef) !important;*/
