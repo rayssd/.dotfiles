@@ -25,6 +25,9 @@ set nocompatible
 set hidden
 set scrolloff=7
 
+"Recommended by Josh
+set list listchars=tab:▷\ ,trail:×,extends:◣,precedes:◢,nbsp:○
+
 " Status line
 set statusline=
 set statusline +=\ %n\            "buffer number
@@ -46,7 +49,7 @@ let &t_EI.="\e[2 q" "EI = NORMAL mode
 
 " Vimwiki specific conf
 let g:vimwiki_list = [{'path': '~/MEGAsync/vimwiki/', 'syntax': 'markdown', 'ext': '.md'}]
-set conceallevel=2
+" set conceallevel=2
 
 " Vim hardtime
 " let g:hardtime_default_on = 1
@@ -54,14 +57,3 @@ set conceallevel=2
 " Launching nvim directly from command line window size fix
 autocmd VimEnter * :silent exec "!kill -s SIGWINCH $PPID"
 
-" Tree-sitter
-lua <<EOF
-require'nvim-treesitter.configs'.setup {
---	ensure_installed = "maintained", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
-	-- ignore_install = { "javascript" }, -- List of parsers to ignore installing
-	highlight = { enable = true,              -- false will disable the whole extension
-				 -- disable = { "c", "rust" },  -- list of language that will be disabled
-				},
-	indent = { enable = true }	
-}
-EOF

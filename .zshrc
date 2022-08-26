@@ -7,14 +7,19 @@ fi
 
 bindkey "^[[1;5C" forward-word
 bindkey "^[[1;5D" backward-word
+#bindkey -e
 #alias ll="ls -lahG"
 alias ll="exa -lh"
-alias cat="bat"
+#alias cat="bat"
 alias dotfiles='/usr/local/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias k=kubectl
 export do="-o yaml --dry-run=client "
+export EDITOR=vim
+
 #PROMPT='%B%F{75}%1~%f%b %# '
 source /usr/local/opt/powerlevel10k/powerlevel10k.zsh-theme
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
+export PATH="/usr/local/opt/openssl@3/bin:$PATH"
+eval "$(pyenv init -)"

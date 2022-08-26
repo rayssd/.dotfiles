@@ -59,10 +59,11 @@ yabai -m rule --add label="Dictionary" app="^Dictionary$" manage=off
 yabai -m rule --add label="mpv" app="^mpv$" manage=off
 yabai -m rule --add label="Software Update" title="Software Update" manage=off
 yabai -m rule --add label="About This Mac" app="System Information" title="About This Mac" manage=off
-yabai -m rule --add label="Zoom" app="zoom.us" title=".*" manage=off space=3
+yabai -m rule --add label="Zoom" app="zoom.us" title=".*" manage=off
 yabai -m rule --add label="OBS" app="OBS" title=".*" manage=off space=3
 yabai -m rule --add label="EventViewer" app="EventViewer" title="EventViewer" manage=off
 yabai -m rule --add label="Archive Utility" app="Archive Utility" title=".*" manage=off
+yabai -m rule --add label="lv" app="lv" title=".*" manage=off
 
 # App placement rules
 yabai -m rule --add label="Slack" app="^Slack Helper$" title=".*" space=4
