@@ -1111,7 +1111,7 @@ c.content.user_stylesheets = ['/Users/ray/.qutebrowser/customCSS/darkmode.css']
 ## Directory to save downloads to. If unset, a sensible OS-specific
 ## default is used.
 ## Type: Directory
-# c.downloads.location.directory = None
+c.downloads.location.directory = "~/Cases/"
 
 ## Prompt the user for the download location. If set to false,
 ## `downloads.location.directory` will be used.
@@ -2004,11 +2004,11 @@ c.url.default_page = 'about:blank'
 ## the search engine name to the search term, e.g. `:open google
 ## qutebrowser`.
 ## Type: Dict
-c.url.searchengines = {'DEFAULT': 'https://search.brave.com/search?q={}',
+c.url.searchengines = {'DEFAULT': 'https://lokiunifi.duckdns.org/search?q={}',
                        'kf': 'https://search.corp.mongodb.com/#q={}&sort=relevancy',
                        'docs': 'https://docs.mongodb.com/search/?q={}',
                        'git': 'https://github.com/search?q={}&ref=opensearch',
-                       'loki': 'https://lokiunifi.duckdns.org/search?q={}'}
+                       'brave': 'https://search.brave.com/search?q={}'}
 
 ## Page(s) to open at the start.
 ## Type: List of FuzzyUrl, or FuzzyUrl

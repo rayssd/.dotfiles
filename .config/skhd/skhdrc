@@ -19,16 +19,16 @@ alt - j : yabai -m window --focus prev
 alt - k : yabai -m window --focus next
 
 # Focus display
-alt - 0x2B : yabai -m display --focus next
-alt - 0x2F : yabai -m display --focus prev
+alt - 0x2B : yabai -m display --focus west
+alt - 0x2F : yabai -m display --focus east
 
 # Moving windows
 shift + alt - j : yabai -m window --warp prev
 shift + alt - k : yabai -m window --warp next
 
 # Moving windows across displays  0x2B = , |  0x2F = .
-shift + alt - 0x2B : yabai -m window --display next; yabai -m display --focus next 
-shift + alt - 0x2F : yabai -m window --display prev; yabai -m display --focus prev
+shift + alt - 0x2B : yabai -m window --display west; yabai -m display --focus west 
+shift + alt - 0x2F : yabai -m window --display east; yabai -m display --focus east
 
 # Move focus container to workspace
 shift + alt - h : yabai -m window --space prev; yabai -m space --focus prev
