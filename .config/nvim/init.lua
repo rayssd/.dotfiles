@@ -6,4 +6,6 @@ require("core.options")
 require("plugins.treesitter")
 require("plugins.lualine")
 require("plugins.vimwiki")
+require("plugins.comment")
+require("plugins.rainbow")
 

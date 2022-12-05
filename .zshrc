@@ -8,10 +8,19 @@ fi
 bindkey "^[[1;5C" forward-word
 bindkey "^[[1;5D" backward-word
 bindkey '^R' history-incremental-search-backward
-#bindkey -e
+
+bindkey -v
+# Enable Ctrl-x-e to edit command line
+autoload -U edit-command-line
+# Vi style:
+zle -N edit-command-line
+bindkey -M vicmd e edit-command-line
+
+
+
 #alias ll="ls -lahG"
 alias ll="exa -lh"
-#alias cat="bat"
+alias cat="bat"
 alias dotfiles='/usr/local/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias k=kubectl
 export do="-o yaml --dry-run=client "

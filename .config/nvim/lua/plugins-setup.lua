@@ -57,7 +57,12 @@ return packer.startup(function(use)
   use{"vimwiki/vimwiki", keys={{'n', '<Leader>ww'}}}
 
   -- JS Beautify
-  use( "maksimr/vim-jsbeautify" )
+  -- use{ "maksimr/vim-jsbeautify", event="FuncUndefined" }
+  use{ "maksimr/vim-jsbeautify", fn="RangeJsonBeautify" }
+
+
+  -- rainbow paranthesis
+  use("p00f/nvim-ts-rainbow")
 
 if packer_bootstrap then
    require("packer").sync()

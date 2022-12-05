@@ -25,9 +25,9 @@ opt.undofile = true
 opt.swapfile = false
 
 -- tab preferences
-opt.tabstop = 4
-opt.shiftwidth = 4
-opt.softtabstop = 4
+opt.tabstop = 2
+opt.shiftwidth = 2
+opt.softtabstop = 2
 opt.expandtab = true
 
 opt.hlsearch = false
@@ -52,3 +52,6 @@ vim.filetype.add({
   pattern = {
     ['/private/var/folders/.*'] = 'markdown',
 }})
+
+-- enable spell checking for markdown filetype
+vim.cmd("autocmd FileType markdown setlocal spell spelllang=en_au")
