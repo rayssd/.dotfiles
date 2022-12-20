@@ -1,11 +1,28 @@
-require("plugins-setup")
-require("core.colorscheme")
-require("core.keymaps")
-require("core.options")
+local disabled_built_ins = {
+    "netrw",
+    "netrwPlugin",
+    "netrwSettings",
+    "netrwFileHandlers",
+    "gzip",
+    "zip",
+    "zipPlugin",
+    "tar",
+    "tarPlugin",
+    "getscript",
+    "getscriptPlugin",
+    "vimball",
+    "vimballPlugin",
+    "2html_plugin",
+    "logipat",
+    "rrhelper",
+    "spellfile_plugin",
+    "matchit"
+}
 
-require("plugins.treesitter")
-require("plugins.lualine")
-require("plugins.vimwiki")
-require("plugins.comment")
-require("plugins.rainbow")
+for _, plugin in pairs(disabled_built_ins) do
+    vim.g["loaded_" .. plugin] = 1
+end
+
+require("plugins")
+require("core")
 

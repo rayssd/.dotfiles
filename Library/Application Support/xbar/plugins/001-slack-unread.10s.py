@@ -1,4 +1,4 @@
-#!/usr/bin/env /Users/ray/.pyenv/shims/python3
+#!/usr/bin/env /usr/local/bin/python3
 # coding=utf-8
 #  <xbar.var>string(SLACK_API_KEY=None): Slack API Key </xbar.var>
 

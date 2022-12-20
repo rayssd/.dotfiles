@@ -14,12 +14,13 @@ bindkey -v
 autoload -U edit-command-line
 # Vi style:
 zle -N edit-command-line
-bindkey -M vicmd e edit-command-line
+bindkey '^e' edit-command-line
+bindkey -v '^?' backward-delete-char
 
 
 
 #alias ll="ls -lahG"
-alias ll="exa -lh"
+alias ll="exa -lh --color=always --group-directories-first"
 alias cat="bat"
 alias dotfiles='/usr/local/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias k=kubectl
@@ -33,5 +34,7 @@ source /usr/local/opt/powerlevel10k/powerlevel10k.zsh-theme
 
 export PATH="/usr/local/opt/openssl@3/bin:$PATH"
 export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
-eval "$(pyenv init -)"
+# eval "$(pyenv init -)"
 
+
+source /Users/ray/.config/broot/launcher/bash/br

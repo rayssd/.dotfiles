@@ -55,3 +55,4 @@ vim.filetype.add({
 
 -- enable spell checking for markdown filetype
 vim.cmd("autocmd FileType markdown setlocal spell spelllang=en_au")
+-- vim.cmd("autocmd FileType markdown lua vim.diagnostic.disable()")
