@@ -3,23 +3,44 @@ local lsp = require("lsp-zero")
 lsp.preset("recommended")
 
 lsp.ensure_installed({
-  'tsserver',
-  'eslint',
+  'denols',
   'sumneko_lua',
   'rust_analyzer',
 })
 
 -- Fix Undefined global 'vim'
 lsp.configure('sumneko_lua', {
-    settings = {
-        Lua = {
-            diagnostics = {
-                globals = { 'vim' }
-            }
-        }
+  single_file_support = true,
+  settings = {
+    Lua = {
+      diagnostics = {
+        globals = { 'vim' }
+      }
     }
+  }
 })
 
+lsp.configure('denols', {
+  -- on_attach = on_attach,
+  flags = {
+    debounce_text_changes = 150,
+  },
+  filetypes = {
+    'json',
+    'javascript',
+    'javascriptreact',
+    'javascript.jsx',
+    'typescript',
+    'typescriptreact',
+    'typescript.tsx',
+    'markdown',
+  },
+  single_file_support = true,
+  init_options = {
+    config = vim.fn.expand('$HOME/.dprint.json'),
+    lint = true,
+  },
+})
 
 local cmp = require('cmp')
 local cmp_select = {behavior = cmp.SelectBehavior.Select}
@@ -74,4 +95,3 @@ lsp.setup()
 vim.diagnostic.config({
     virtual_text = true,
 })
-

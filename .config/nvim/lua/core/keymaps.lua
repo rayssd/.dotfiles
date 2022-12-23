@@ -1,6 +1,3 @@
--- set leader key to space
-vim.g.mapleader = " "
-
 local keymap = vim.keymap
 
 -- window management
@@ -16,6 +13,7 @@ keymap.set("n", "<leader>tp", ":tabp<CR>") --  go to previous tab
 
 -- vim-jsbeautify
 keymap.set("n", "<leader>jj", ":call RangeJsonBeautify()<CR>")
+keymap.set("v", "gq", ":!~/Projects/jp43/jp43.sh<CR>")
 
 -- nvim-tree
 keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>") -- toggle file explorer
@@ -29,4 +27,7 @@ keymap.set("n", "<leader>fh", "<cmd>Telescope help_tags<cr>") -- list available 
 
 -- AI
 keymap.set("v", "<leader>ai", ":AI fix grammar and spelling and replace slang and contractions with a formal academic writing style<CR>", { noremap = true })
+
+-- Not working
+-- keymap.set('v', 'gq', vim.lsp.buf.format)
 
