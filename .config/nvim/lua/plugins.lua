@@ -97,5 +97,5 @@ return {
     }
   },
   -- AI
-  "aduros/ai.vim"
+  { "aduros/ai.vim", cmd = "AI"}
 }

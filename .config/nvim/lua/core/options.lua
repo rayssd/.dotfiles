@@ -47,6 +47,9 @@ opt.backspace = "indent,eol,start" -- allow backspace on indent, end of line or 
 -- line wrapping
 opt.wrap = true
 
+-- Reserve space for diagnostic icons
+opt.signcolumn = 'yes'
+
 -- file type detection for case comments
 vim.filetype.add({
   pattern = {
