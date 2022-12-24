@@ -97,5 +97,12 @@ return {
     }
   },
   -- AI
-  { "aduros/ai.vim", cmd = "AI"}
+  { "aduros/ai.vim", cmd = "AI"},
+
+  { "abecodes/tabout.nvim",
+    event ="InsertEnter",
+    config = function()
+      require("lazy-configs.tabout")
+    end,
+  }
 }
