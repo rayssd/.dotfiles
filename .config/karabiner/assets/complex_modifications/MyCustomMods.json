@@ -140,18 +140,18 @@
       ]
     },
 	{
-		"description": "Post Esc if Caps is tapped, Option if held.",
+		"description": "Post Esc if Caps is tapped, fn if held.",
 		"manipulators": [ {
 			"type": "basic",
 			"from": { 
-				"key_code": "left_option", 
+				"key_code": "fn", 
 				"modifiers": { 
 					"optional": [ "any" ] 
 				} 
 			}, 
 			"to": [ 
 			{ 
-				"key_code": "left_option", 
+				"key_code": "fn", 
 				"lazy": true 
 			} ], 
 			"to_if_alone": [ { 

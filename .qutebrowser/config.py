@@ -1156,6 +1156,7 @@ c.downloads.location.directory = "~/Cases/"
 ## Same as `{column}`, but starting from index 0.
 ## Type: ShellCommand
 c.editor.command = ['/Applications/Alacritty.app/Contents/MacOS/alacritty', '-e', '/bin/zsh', '-lc', 'vim {file} "+call cursor({line},{column})"'] 
+# c.editor.command = ['/Applications/Alacritty.app/Contents/MacOS/alacritty', '-e', '/bin/zsh', '-lc', 'hx {file}'] 
 ## Encoding to use for the editor.
 ## Type: Encoding
 # c.editor.encoding = 'utf-8'

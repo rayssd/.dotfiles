@@ -17,7 +17,8 @@ from threading import Thread
 # You need to modify this part by generating your own tokens
 # https://api.slack.com/custom-integrations/legacy-tokens#legacy_token_generator
 #
-token = os.environ.get('SLACK_API_KEY')
+# token = os.environ.get('SLACK_API_KEY')
+token = os.environ['SLACK_API_KEY']
 
 dark_mode = False
 # Build script in terminal
