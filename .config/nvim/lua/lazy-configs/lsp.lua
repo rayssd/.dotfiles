@@ -6,6 +6,7 @@ lsp.ensure_installed({
   'denols',
   'lua_ls',
   'rust_analyzer',
+  'marksman',
 })
 
 -- Fix Undefined global 'vim'
@@ -33,7 +34,6 @@ lsp.configure('denols', {
     'typescript',
     'typescriptreact',
     'typescript.tsx',
-    'markdown',
   },
   single_file_support = true,
   init_options = {

@@ -31,3 +31,5 @@ keymap.set("v", "<leader>ai", ":AI fix grammar and spelling and replace slang an
 -- Not working
 -- keymap.set('v', 'gq', vim.lsp.buf.format)
 
+-- Remove pesky trailing whitespaces
+keymap.set('n', '<Leader>wt', [[:%s/\s\+$//e<cr>]])
