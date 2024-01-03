@@ -2,11 +2,27 @@ local lsp = require("lsp-zero")
 
 lsp.preset("recommended")
 
-lsp.ensure_installed({
-  'denols',
-  'lua_ls',
-  'rust_analyzer',
-  'marksman',
+require('mason').setup({})
+require('mason-lspconfig').setup({
+  ensure_installed = {
+    'denols',
+    'lua_ls',
+    'rust_analyzer',
+    'marksman',
+  },
+  handlers = {
+    lsp.default_setup,
+  }
+})
+
+require('mason-lspconfig').setup_handlers({
+  function(server_name)
+      require("lspconfig")[server_name].setup({ on_attach = on_attach, capabilities = capabilities })
+    end,
+
+    ["rust_analyzer"] = function ()
+        require("rust-tools").setup()
+    end
 })
 
 -- Fix Undefined global 'vim'
@@ -42,14 +58,18 @@ lsp.configure('denols', {
   },
 })
 
+
 local cmp = require('cmp')
 local cmp_select = {behavior = cmp.SelectBehavior.Select}
-local cmp_mappings = lsp.defaults.cmp_mappings({
-  ['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
-  ['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
-  ['<Tab>'] = cmp.mapping.confirm({ select = true }),
-  -- ['<C-y>'] = cmp.mapping.confirm({ select = true }),
-  ["<S-Space>"] = cmp.mapping.complete(),
+local cmp_action = require('lsp-zero').cmp_action()
+cmp.setup({ 
+  cmp_mappings = lsp.defaults.cmp_mappings({
+    ['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
+    ['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
+    ['<Tab>'] = cmp.mapping.confirm({ select = true }),
+    -- ['<C-y>'] = cmp.mapping.confirm({ select = true }),
+    ["<S-Space>"] = cmp.mapping.complete(),
+  })
 })
 
 -- disable completion with tab
@@ -57,9 +77,6 @@ local cmp_mappings = lsp.defaults.cmp_mappings({
 -- cmp_mappings['<Tab>'] = nil
 -- cmp_mappings['<S-Tab>'] = nil
 
-lsp.setup_nvim_cmp({
-  mapping = cmp_mappings
-})
 
 lsp.set_preferences({
     suggest_lsp_servers = false,
@@ -91,7 +108,7 @@ lsp.on_attach(function(client, bufnr)
   vim.keymap.set("i", "<C-h>", vim.lsp.buf.signature_help, opts)
 end)
 
-lsp.setup()
+-- lsp.setup()
 
 vim.diagnostic.config({
     virtual_text = true,

@@ -72,7 +72,10 @@ return {
     end
   }, -- fuzzy finder
 
+
+  -- LSP Zero
   { 'VonHeikemen/lsp-zero.nvim',
+    branch = 'v3.x',
     event = "InsertEnter",
     config = function()
       require("lazy-configs.lsp")
@@ -82,6 +85,7 @@ return {
       {'neovim/nvim-lspconfig'},
       {'williamboman/mason.nvim'},
       {'williamboman/mason-lspconfig.nvim'},
+      {'simrat39/rust-tools.nvim'},
 
       -- Autocompletion
       {'hrsh7th/nvim-cmp'},

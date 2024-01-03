@@ -24,8 +24,10 @@ alias ll="exa -lh --color=always --group-directories-first"
 alias cat="bat"
 alias dotfiles='/usr/local/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias k=kubectl
+alias grep='grep --color=auto'
+alias egrep='egrep --color=auto'
 export do="-o yaml --dry-run=client "
-export EDITOR=vim
+export EDITOR=nvim
 
 #PROMPT='%B%F{75}%1~%f%b %# '
 source /usr/local/opt/powerlevel10k/powerlevel10k.zsh-theme
@@ -38,3 +40,12 @@ eval "$(pyenv init -)"
 
 
 source /Users/ray/.config/broot/launcher/bash/br
+
+function ya() {
+    tmp="$(mktemp -t "yazi-cwd.XXXXX")"
+    yazi --cwd-file="$tmp"
+    if cwd="$(cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+        cd -- "$cwd"
+    fi
+    rm -f -- "$tmp"
+}
