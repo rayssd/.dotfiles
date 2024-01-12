@@ -10,6 +10,7 @@ local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
    })
  end
 vim.opt.runtimepath:prepend(lazypath)
+
 vim.g.loaded_python3_provider = 0
 vim.g.mapleader = " "
 
