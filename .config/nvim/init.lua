@@ -1,3 +1,6 @@
+vim.g.loaded_python3_provider = 0
+vim.g.mapleader = " "
+
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
  if not vim.loop.fs_stat(lazypath) then
    vim.fn.system({
@@ -11,8 +14,6 @@ local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
  end
 vim.opt.runtimepath:prepend(lazypath)
 
-vim.g.loaded_python3_provider = 0
-vim.g.mapleader = " "
 
 if vim.g.vscode then
 
