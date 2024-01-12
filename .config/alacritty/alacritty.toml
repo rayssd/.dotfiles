@@ -324,12 +324,12 @@ mods = "Control"
 
 [[keyboard.bindings]]
 chars = "\u001B`"
-key = "Grave"
+key = "`"
 mods = "Alt"
 
 [[keyboard.bindings]]
 chars = "\u001B~"
-key = "Grave"
+key = "`"
 mods = "Alt|Shift"
 
 [[keyboard.bindings]]
@@ -386,6 +386,71 @@ mods = "Alt|Shift"
 chars = "\u001B;"
 key = "Semicolon"
 mods = "Alt"
+
+[[keyboard.bindings]]
+chars = "\u001B[1;5l"
+key = "Comma"
+mods = "Control"
+
+[[keyboard.bindings]]
+chars = "\u001B[1;5n"
+key = "Period"
+mods = "Control"
+
+[[keyboard.bindings]]
+chars = "\u001B[27;5;9~"
+key = "Tab"
+mods = "Control"
+
+[[keyboard.bindings]]
+chars = "\u001B[27;5;48~"
+key = "0"
+mods = "Control"
+
+[[keyboard.bindings]]
+chars = "\u001B[27;5;49~"
+key = "1"
+mods = "Control"
+
+[[keyboard.bindings]]
+chars = "\u001B[27;5;50~"
+key = "2"
+mods = "Control"
+
+[[keyboard.bindings]]
+chars = "\u001B[27;5;51~"
+key = "3"
+mods = "Control"
+
+[[keyboard.bindings]]
+chars = "\u001B[27;5;52~"
+key = "4"
+mods = "Control"
+
+[[keyboard.bindings]]
+chars = "\u001B[27;5;53~"
+key = "5"
+mods = "Control"
+
+[[keyboard.bindings]]
+chars = "\u001B[27;5;54~"
+key = "6"
+mods = "Control"
+
+[[keyboard.bindings]]
+chars = "\u001B[27;5;55~"
+key = "7"
+mods = "Control"
+
+[[keyboard.bindings]]
+chars = "\u001B[27;5;56~"
+key = "8"
+mods = "Control"
+
+[[keyboard.bindings]]
+chars = "\u001B[27;5;57~"
+key = "9"
+mods = "Control"
 
 [window]
 decorations = "full"

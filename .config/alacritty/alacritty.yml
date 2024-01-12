@@ -909,6 +909,8 @@ key_bindings:
   - { key: Backslash, mods: Alt,       chars: "\x1b\\"                      } # Alt + \
   - { key: Backslash, mods: Alt|Shift, chars: "\x1b|"                       } # Alt + |
   - { key: Semicolon, mods: Alt,       chars: "\x1b;"                       } # Alt + ;
+  - {key: Tab, mods: Control, chars: "\x1b[27;5;9~"} # Control + Tab
+  - {key: Tab, mods: Control|Shift, chars: "\x1b[27;6;9~"} # Control + Shift + Tab
 
 #debug:
   # Display the time it takes to redraw each frame.

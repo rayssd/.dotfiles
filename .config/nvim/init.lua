@@ -10,36 +10,74 @@ local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
    })
  end
 vim.opt.runtimepath:prepend(lazypath)
-
+vim.g.loaded_python3_provider = 0
 vim.g.mapleader = " "
 
-require("lazy").setup("plugins", {
-  performance = {
-    rtp = {
-      disabled_plugins = {
-        "netrw",
-        "netrwPlugin",
-        "netrwSettings",
-        "netrwFileHandlers",
-        "gzip",
-        "zip",
-        "zipPlugin",
-        "tar",
-        "tarPlugin",
-        "getscript",
-        "getscriptPlugin",
-        "vimball",
-        "vimballPlugin",
-        "2html_plugin",
-        "logipat",
-        "rrhelper",
-        -- "spellfile_plugin",
-        "matchit",
-        "tutor",
-        "tohtml"
+if vim.g.vscode then
+
+  -- vim.cmd[[source $HOME/.config/nvim/vscode/settings.vim]]
+  require("lazy").setup("vscode.essentials", {
+    performance = {
+      rtp = {
+        disabled_plugins = {
+          "netrw",
+          "netrwPlugin",
+          "netrwSettings",
+          "netrwFileHandlers",
+          "gzip",
+          "zip",
+          "zipPlugin",
+          "tar",
+          "tarPlugin",
+          "getscript",
+          "getscriptPlugin",
+          "vimball",
+          "vimballPlugin",
+          "2html_plugin",
+          "logipat",
+          "rrhelper",
+          -- "spellfile_plugin",
+          "matchit",
+          "tutor",
+          "tohtml"
+        }
       }
     }
-  }
-})
+  })
 
-require("core")
+  require("core")
+  -- require("core.keymaps")
+  -- require("core.options")
+
+else
+  require("lazy").setup("plugins", {
+    performance = {
+      rtp = {
+        disabled_plugins = {
+          "netrw",
+          "netrwPlugin",
+          "netrwSettings",
+          "netrwFileHandlers",
+          "gzip",
+          "zip",
+          "zipPlugin",
+          "tar",
+          "tarPlugin",
+          "getscript",
+          "getscriptPlugin",
+          "vimball",
+          "vimballPlugin",
+          "2html_plugin",
+          "logipat",
+          "rrhelper",
+          -- "spellfile_plugin",
+          "matchit",
+          "tutor",
+          "tohtml"
+        }
+      }
+    }
+  })
+  require("core")
+end
+

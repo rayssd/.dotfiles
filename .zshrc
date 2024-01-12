@@ -37,7 +37,7 @@ source /usr/local/opt/powerlevel10k/powerlevel10k.zsh-theme
 export PATH="/Users/ray/.local/bin:/usr/local/opt/openssl@3/bin:$PATH"
 export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
 eval "$(pyenv init -)"
-
+eval $(thefuck --alias)
 
 source /Users/ray/.config/broot/launcher/bash/br
 

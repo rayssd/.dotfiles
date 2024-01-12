@@ -24,6 +24,27 @@ return {
     end,
   },
 
+  --dap
+
+  { "rcarriga/nvim-dap-ui",
+    dependencies = {"mfussenegger/nvim-dap"},
+    config = function()
+      local dap, dapui = require("dap"), require("dapui")
+      dap.listeners.before.attach.dapui_config = function()
+        dapui.open()
+      end
+      dap.listeners.before.launch.dapui_config = function()
+        dapui.open()
+      end
+      dap.listeners.before.event_terminated.dapui_config = function()
+        dapui.close()
+      end
+      dap.listeners.before.event_exited.dapui_config = function()
+        dapui.close()
+      end
+    end
+  },
+
   -- lua line
   "nvim-lualine/lualine.nvim",
 
@@ -72,41 +93,61 @@ return {
     end
   }, -- fuzzy finder
 
+  {'mrcjkb/rustaceanvim', version = '^3', -- Recommended
+    ft = { 'rust' },
+  },
 
-  -- LSP Zero
-  { 'VonHeikemen/lsp-zero.nvim',
-    branch = 'v3.x',
-    event = "InsertEnter",
+  -- LSP Support
+  {'neovim/nvim-lspconfig',
     config = function()
       require("lazy-configs.lsp")
-    end,
-    dependencies = {
-    -- LSP Support
-      {'neovim/nvim-lspconfig'},
-      {'williamboman/mason.nvim'},
-      {'williamboman/mason-lspconfig.nvim'},
-      {'simrat39/rust-tools.nvim'},
-
-      -- Autocompletion
-      {'hrsh7th/nvim-cmp'},
-      {'hrsh7th/cmp-buffer'},
-      {'hrsh7th/cmp-path'},
-      {'saadparwaiz1/cmp_luasnip'},
-      {'hrsh7th/cmp-nvim-lsp'},
-      {'hrsh7th/cmp-nvim-lua'},
-
-      -- Snippets
-      {'L3MON4D3/LuaSnip'},
-      {'rafamadriz/friendly-snippets'},
-    }
+    end
   },
-  -- AI
-  { "aduros/ai.vim", cmd = "AI"},
 
-  { "abecodes/tabout.nvim",
-    event ="InsertEnter",
-    config = function()
-      require("lazy-configs.tabout")
-    end,
+  {'williamboman/mason.nvim'},
+  -- {'williamboman/mason-lspconfig.nvim'},
+  -- Autocompletion
+  -- {'hrsh7th/nvim-cmp'},
+  -- {'hrsh7th/cmp-buffer'},
+  -- {'hrsh7th/cmp-path'},
+  -- {'saadparwaiz1/cmp_luasnip'},
+  -- {'hrsh7th/cmp-nvim-lsp'},
+  -- {'hrsh7th/cmp-nvim-lua'},
+
+  -- Snippets
+  -- {'L3MON4D3/LuaSnip'},
+  -- {'rafamadriz/friendly-snippets'},
+  { "rust-lang/rust.vim",
+    ft = "rust",
+    init = function()
+      vim.g.rustfmt_autosave = 1
+    end
+  },
+
+  -- AI
+--  { "aduros/ai.vim", cmd = "AI"},
+
+  -- { "abecodes/tabout.nvim",
+  --   event ="InsertEnter",
+  --   config = function()
+  --     require("lazy-configs.tabout")
+  --   end,
+  -- }
+
+  { "christoomey/vim-tmux-navigator",
+    cmd = {
+      "TmuxNavigateLeft",
+      "TmuxNavigateDown",
+      "TmuxNavigateUp",
+      "TmuxNavigateRight",
+      "TmuxNavigatePrevious",
+    },
+    keys = {
+      { "<c-h>", "<cmd><C-U>TmuxNavigateLeft<cr>" },
+      { "<c-j>", "<cmd><C-U>TmuxNavigateDown<cr>" },
+      { "<c-k>", "<cmd><C-U>TmuxNavigateUp<cr>" },
+      { "<c-l>", "<cmd><C-U>TmuxNavigateRight<cr>" },
+      { "<c-\\>", "<cmd><C-U>TmuxNavigatePrevious<cr>" },
+    },
   }
 }
