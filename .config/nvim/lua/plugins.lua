@@ -125,8 +125,14 @@ return {
   },
 
   -- AI
---  { "aduros/ai.vim", cmd = "AI"},
 
+  -- Custom Parameters (with defaults)
+  { "David-Kunz/gen.nvim",
+    event = "VeryLazy",
+    config = function()
+      require("lazy-configs.gen")
+    end
+  },
   -- { "abecodes/tabout.nvim",
   --   event ="InsertEnter",
   --   config = function()

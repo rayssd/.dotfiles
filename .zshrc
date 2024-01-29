@@ -17,6 +17,9 @@ zle -N edit-command-line
 bindkey '^e' edit-command-line
 bindkey -v '^?' backward-delete-char
 
+# preserves zsh command history across tmux windows
+setopt inc_append_history
+setopt share_history
 
 
 #alias ll="ls -lahG"
@@ -49,3 +52,4 @@ function ya() {
     fi
     rm -f -- "$tmp"
 }
+

@@ -18,17 +18,29 @@ fn - 9 : yabai -m space --focus 9
 fn - j : yabai -m window --focus prev
 fn - k : yabai -m window --focus next
 
-# Focus display
-fn - 0x2B : yabai -m display --focus west
-fn - 0x2F : yabai -m display --focus east
-
 # Moving windows
 shift + fn - j : yabai -m window --warp prev
 shift + fn - k : yabai -m window --warp next
 
+# Focus display
+fn - 0x2B : yabai -m display --focus west
+fn - 0x2F : yabai -m display --focus east
+
 # Moving windows across displays  0x2B = , |  0x2F = .
 shift + fn - 0x2B : yabai -m window --display west; yabai -m display --focus west 
 shift + fn - 0x2F : yabai -m window --display east; yabai -m display --focus east
+
+# Window Operation
+fn - x : yabai -m window --close
+
+# Float / Unfloat window
+fn - f : \
+    yabai -m window --toggle float; \
+    yabai -m window --toggle border
+
+# Make window native fullscreen
+shift + fn - m         : yabai -m window --toggle native-fullscreen
+fn - m                 : yabai -m window --toggle zoom-fullscreen
 
 # Move focus container to workspace
 shift + fn - h : yabai -m window --space prev; yabai -m space --focus prev
@@ -50,7 +62,7 @@ ctrl + fn - k : yabai -m window --resize top:0:-50 && yabai -m window --resize b
 ctrl + fn - l : yabai -m window --resize right:-50:0 && yabai -m window --resize left:-50:0
 
 # Equalize size of windows
-ctrl + fn - b : yabai -m space --balance
+fn - b : yabai -m space --balance
 
 # Enable / Disable gaps in current workspace
 ctrl + fn - g : yabai -m space --toggle padding; yabai -m space --toggle gap
@@ -69,10 +81,6 @@ shift + ctrl + fn - j : yabai -m window --insert south
 shift + ctrl + fn - k : yabai -m window --insert north
 shift + ctrl + fn - l : yabai -m window --insert east
 
-# Float / Unfloat window
-shift + fn - space : \
-    yabai -m window --toggle float; \
-    yabai -m window --toggle border
 
 # Restart Yabai
 shift + ctrl + fn - r : \
@@ -80,6 +88,3 @@ shift + ctrl + fn - r : \
         "display notification \"Restarting Yabai\" with title \"Yabai\""; \
     launchctl kickstart -k "gui/${UID}/homebrew.mxcl.yabai"
 
-# Make window native fullscreen
-fn - f         : yabai -m window --toggle zoom-fullscreen
-shift + fn - f : yabai -m window --toggle native-fullscreen

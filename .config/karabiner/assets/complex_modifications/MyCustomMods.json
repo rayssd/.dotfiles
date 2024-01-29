@@ -26,6 +26,30 @@
       ]
     },
     {
+      "description": "Capslock-T to open Terminal.",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "t",
+            "modifiers": {
+              "mandatory": [
+                "fn"
+              ],
+              "optional": [
+                "caps_lock"
+              ]
+            }
+          },
+          "to": [
+            {
+              "shell_command": "open -n '/Applications/Alacritty.app'"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "description": "Option-B to open Brave.",
       "manipulators": [
         {
