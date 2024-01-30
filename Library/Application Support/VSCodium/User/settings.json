@@ -1,0 +1,39 @@
+{
+    "workbench.colorTheme": "Default Dark Modern",
+    // editors
+    "editor.lineNumbers": "relative",
+    "editor.cursorBlinking": "solid",
+    "editor.occurrencesHighlight": "off",
+    "editor.semanticTokenColorCustomizations": {
+        "enabled": true,
+        "rules": {
+            "*.mutable": {
+                "underline": false,
+            }
+        }
+    },
+    "editor.fontSize": 14,
+    "editor.fontLigatures": false,
+
+    // vscode-neovim
+    "vscode-neovim.neovimExecutablePaths.darwin" : "/usr/local/bin/nvim",
+    "vscode-neovim.neovimInitVimPaths.darwin" : "$HOME/.config/nvim/init.lua",
+    "extensions.experimental.affinity": {
+        "asvetliakov.vscode-neovim": 1
+    },
+
+    // vscodeVim
+    "vim.smartRelativeLine": true,
+
+    // rust
+    "[rust]": {},
+    "rust-analyzer.inlayHints.chainingHints.enable": false,
+    "rust-analyzer.inlayHints.parameterHints.enable": false,
+    "rust-analyzer.inlayHints.renderColons": false,
+    "rust-analyzer.inlayHints.typeHints.enable": false,
+    "window.zoomLevel": 2,
+    "terminal.integrated.fontSize": 14,
+    "terminal.integrated.fontFamily": "FiraCode Nerd Font",
+    "editor.fontFamily": "FiraCode Nerd Font",
+    
+}
