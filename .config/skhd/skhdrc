@@ -2,17 +2,17 @@
 # fn - return : "${HOME}"/.config/yabai/scripts/open_iterm2.sh
 
 # Focus space
-fn - h : yabai -m space --focus prev
-fn - l : yabai -m space --focus next
-fn - 1 : yabai -m space --focus 1
-fn - 2 : yabai -m space --focus 2
-fn - 3 : yabai -m space --focus 3
-fn - 4 : yabai -m space --focus 4
-fn - 5 : yabai -m space --focus 5
-fn - 6 : yabai -m space --focus 6
-fn - 7 : yabai -m space --focus 7
-fn - 8 : yabai -m space --focus 8
-fn - 9 : yabai -m space --focus 9
+fn - h : yabai -m space --focus prev && yabai -m window --focus $(yabai -m query --windows --space | jq '.[-1].id')
+fn - l : yabai -m space --focus next && yabai -m window --focus $(yabai -m query --windows --space | jq '.[-1].id')
+fn - 1 : yabai -m space --focus 1 && yabai -m window --focus $(yabai -m query --windows --space | jq '.[-1].id')
+fn - 2 : yabai -m space --focus 2 && yabai -m window --focus $(yabai -m query --windows --space | jq '.[-1].id')
+fn - 3 : yabai -m space --focus 3 && yabai -m window --focus $(yabai -m query --windows --space | jq '.[-1].id')
+fn - 4 : yabai -m space --focus 4 && yabai -m window --focus $(yabai -m query --windows --space | jq '.[-1].id')
+fn - 5 : yabai -m space --focus 5 && yabai -m window --focus $(yabai -m query --windows --space | jq '.[-1].id')
+fn - 6 : yabai -m space --focus 6 && yabai -m window --focus $(yabai -m query --windows --space | jq '.[-1].id')
+fn - 7 : yabai -m space --focus 7 && yabai -m window --focus $(yabai -m query --windows --space | jq '.[-1].id')
+fn - 8 : yabai -m space --focus 8 && yabai -m window --focus $(yabai -m query --windows --space | jq '.[-1].id')
+fn - 9 : yabai -m space --focus 9 && yabai -m window --focus $(yabai -m query --windows --space | jq '.[-1].id')
 
 # Focus windows
 fn - j : yabai -m window --focus prev

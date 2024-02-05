@@ -5,9 +5,15 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+source /Users/ray/.config/fzf/completion.zsh
+source /Users/ray/.config/fzf/key-bindings.zsh
+
 bindkey "^[[1;5C" forward-word
 bindkey "^[[1;5D" backward-word
-bindkey '^R' history-incremental-search-backward
+
+# bindkey "^[^[[C" forward-word
+# bindkey "^[^[[D" backward-word 
+# bindkey '^R' history-incremental-search-backward
 
 bindkey -v
 # Enable Ctrl-x-e to edit command line
@@ -21,6 +27,12 @@ bindkey -v '^?' backward-delete-char
 setopt inc_append_history
 setopt share_history
 
+# ignore duplicate commands
+setopt hist_save_no_dups
+
+# HISTFILE="$HOME/.zsh_history"
+HISTSIZE=10000000
+SAVEHIST=$HISTSIZE
 
 #alias ll="ls -lahG"
 alias ll="exa -lh --color=always --group-directories-first"

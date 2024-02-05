@@ -6,13 +6,7 @@
   /* To bring back OS title bar with min/max/close buttons, some users might
    * consider setting browser.tabs.drawInTitlebar to false in about:config
    */
-/*
-  :root {
-    --custom-sidebar-collapsed-width: 35px;
-    --custom-sidebar-full-width: 10vw;
-    --custom-sidebar-border: 0px solid #404040;
-  }
-*/
+
 
 /* Tab bar font size */
 /*
@@ -36,8 +30,17 @@
     visibility: collapse !important;
   }
 
+
+/* Autohide Side Bar Variables */
+
+  :root {
+    --custom-sidebar-collapsed-width: 35px;
+    --custom-sidebar-full-width: 20vw;
+    --custom-sidebar-border: 0px solid #404040;
+  }
+
 /* Autohide side bar */
-/*
+
   #navigator-toolbox {
     border-bottom: 0 !important;
   }
@@ -81,7 +84,7 @@
   #sidebar-box:not([hidden]) ~ #appcontent .findbar-container {
     min-width: calc(100vw - 48px - var(--custom-sidebar-collapsed-width)) !important;
   }
-*/
+
   /* Sidebar on the right */
 /*
   #sidebar-box[positionend="true"]:not([hidden]) {

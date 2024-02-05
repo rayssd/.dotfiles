@@ -14,6 +14,8 @@
 yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
 sudo yabai --load-sa
 
+# osascript -e 'tell application id "tracesOf.Uebersicht" to refresh'
+
 # global settings
 yabai -m config mouse_follows_focus          off
 yabai -m config focus_follows_mouse          off
@@ -78,7 +80,12 @@ yabai -m rule --add label="t2" app="^t2$" title=".*" space=6
 # yabai -m signal -add event=application_activated action="echo \"application ID \$YABAI_PROCESS_ID activated\"" 
 
 # focus window after active space changes
-yabai -m signal --add event=space_changed action="yabai -m window --focus \$(yabai -m query --windows --space | jq .[0].id)"
+# yabai -m signal --add event=space_changed action="yabai -m window --focus \$(yabai -m query --windows --space | jq '.[-1].id')"
 
 # focus window after active display changes
-yabai -m signal --add event=display_changed action="yabai -m window --focus \$(yabai -m query --windows --space | jq .[0].id)"
+# yabai -m signal --add event=display_changed action="yabai -m window --focus \$(yabai -m query --windows --space | jq '.[-1].id')"
+
+# ===== External Bars ===========================
+
+# add 20 padding to the top and bottom of all spaces regardless of the display it belongs to
+# yabai -m config external_bar all:30:0
