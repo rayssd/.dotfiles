@@ -25,7 +25,7 @@ yabai -m config window_shadow                on
 yabai -m config window_opacity               on
 #yabai -m config window_opacity_duration      0.0
 yabai -m config active_window_opacity        1.0
-yabai -m config normal_window_opacity        0.95
+yabai -m config normal_window_opacity        0.8
 # yabai -m config window_border                on
 # yabai -m config window_border_width          1
 # yabai -m config active_window_border_color   0xff4c79fe
@@ -40,16 +40,16 @@ yabai -m config mouse_drop_action            swap
 
 # general space settings
 yabai -m config layout                       bsp
-yabai -m config top_padding                  8 
-yabai -m config bottom_padding               8
-yabai -m config left_padding                 8
-yabai -m config right_padding                8
-yabai -m config window_gap                   08
+yabai -m config top_padding                  10
+yabai -m config bottom_padding               10
+yabai -m config left_padding                 10
+yabai -m config right_padding                10
+yabai -m config window_gap                   10
 
 # ===== Rules ==================================
 
-# yabai -m rule --add label="Finder" app="^Finder$" title="(Co(py|nnect)|Move|Info|Pref)" manage=off
-yabai -m rule --add label="Finder" app="^Finder$" title=".*" manage=off
+yabai -m rule --add label="Finder" app="^Finder$" title="(Co(py|nnect)|Move|Info|Pref)" manage=off
+# yabai -m rule --add label="Finder" app="^Finder$" title=".*" manage=off
 yabai -m rule --add label="Safari" app="^Safari$" title="^(General|(Tab|Password|Website|Extension)s|AutoFill|Se(arch|curity)|Privacy|Advance)$" manage=off
 yabai -m rule --add label="macfeh" app="^macfeh$" manage=off
 yabai -m rule --add label="System Preferences" app="^System Preferences$" title=".*" manage=off
@@ -72,16 +72,18 @@ yabai -m rule --add label="Okta Verify" app="^Okta Verify$" title=".*" manage=of
 yabai -m rule --add label="E-book Viewer" app="^E-book Viewer$" title=".*" manage=off
 
 # App placement rules
+yabai -m rule --add label="Firefox" app="^Firefox$" title=".*" space=1
 yabai -m rule --add label="Slack" app="^Slack$" title=".*" space=4
-yabai -m rule --add label="t2" app="^t2$" title=".*" space=6
+yabai -m rule --add label="Support Hub" app="^Support Hub$" title=".*" space=4
+yabai -m rule --add label="t2" app="^t2$" title=".*" space=5
 
 # ===== Signals =================================
 
-# yabai -m signal -add event=application_activated action="echo \"application ID \$YABAI_PROCESS_ID activated\"" 
+# yabai -m signal -add event=application_activated action="echo \"application ID \$YABAI_PROCESS_ID activated\""
 
 # focus window after active space changes
 # yabai -m signal --add event=space_changed action="yabai -m window --focus \$(yabai -m query --windows --space | jq '.[-1].id')"
-
+#
 # focus window after active display changes
 # yabai -m signal --add event=display_changed action="yabai -m window --focus \$(yabai -m query --windows --space | jq '.[-1].id')"
 
