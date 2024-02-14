@@ -70,6 +70,7 @@ yabai -m rule --add label="Archive Utility" app="Archive Utility" title=".*" man
 yabai -m rule --add label="Stats" app="Stats" title=".*" manage=off
 yabai -m rule --add label="Okta Verify" app="^Okta Verify$" title=".*" manage=off
 yabai -m rule --add label="E-book Viewer" app="^E-book Viewer$" title=".*" manage=off
+yabai -m rule --add label="Microsoft Teams" app="^Microsoft Teams.*$" title=".*" manage=off
 
 # App placement rules
 yabai -m rule --add label="Firefox" app="^Firefox$" title=".*" space=1

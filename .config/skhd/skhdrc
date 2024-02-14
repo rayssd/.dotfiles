@@ -86,5 +86,7 @@ shift + ctrl + fn - l : yabai -m window --insert east
 shift + ctrl + fn - r : \
     /usr/bin/env osascript <<< \
         "display notification \"Restarting Yabai\" with title \"Yabai\""; \
-    launchctl kickstart -k "gui/${UID}/homebrew.mxcl.yabai"
+    launchctl kickstart -k "gui/${UID}/com.koekeishiya.yabai"
+
+# launchctl kickstart -k "gui/${UID}/homebrew.mxcl.yabai"
 

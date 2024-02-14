@@ -40,15 +40,14 @@
 
 
 /* Autohide Side Bar Variables */
-/*
   :root {
     --custom-sidebar-collapsed-width: 35px;
-    --custom-sidebar-full-width: 20vw;
+    --custom-sidebar-full-width: 15vw;
     --custom-sidebar-border: 0px solid #404040;
   }
-*/
+
 /* Autohide side bar */
-/*
+
   #navigator-toolbox {
     border-bottom: 0 !important;
   }
@@ -68,13 +67,15 @@
     max-width: var(--custom-sidebar-full-width) !important;
     width: var(--custom-sidebar-collapsed-width) !important;
     height: 100%;
-    transition: all 0.2s ease;
+    transition: all 0.2s ease; 
+    transition-delay: 0.5s; /* 1s delay when mouse moves out */ 
   }
 
   #sidebar-box:hover,
   #sidebar-header,
   #sidebar {
     width: var(--custom-sidebar-full-width) !important;
+    transition-delay: 0s; /* No delay when mouse moves in */
   }
 
   #sidebar {
@@ -92,7 +93,6 @@
   #sidebar-box:not([hidden]) ~ #appcontent .findbar-container {
     min-width: calc(100vw - 48px - var(--custom-sidebar-collapsed-width)) !important;
   }
-*/
 
   /* Sidebar on the right */
 /*
