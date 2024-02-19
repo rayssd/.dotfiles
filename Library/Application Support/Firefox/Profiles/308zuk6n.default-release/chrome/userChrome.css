@@ -48,15 +48,15 @@
 
 /* Autohide side bar */
 
-  #navigator-toolbox {
+  :root[titlepreface="᠎"] #navigator-toolbox {
     border-bottom: 0 !important;
   }
 
-  #browser {
+  :root[titlepreface="᠎"] #browser {
     position: relative;
   }
 
-  #sidebar-box:not([hidden]) {
+  :root[titlepreface="᠎"] #sidebar-box:not([hidden]) {
     position: absolute;
     z-index: 1;
     display: flex;
@@ -71,26 +71,26 @@
     transition-delay: 0.5s; /* 1s delay when mouse moves out */ 
   }
 
-  #sidebar-box:hover,
-  #sidebar-header,
-  #sidebar {
+  :root[titlepreface="᠎"] #sidebar-box:hover,
+  :root[titlepreface="᠎"] #sidebar-header,
+  :root[titlepreface="᠎"] #sidebar {
     width: var(--custom-sidebar-full-width) !important;
     transition-delay: 0s; /* No delay when mouse moves in */
   }
 
-  #sidebar {
+  :root[titlepreface="᠎"] #sidebar {
     flex-grow: 1;
   }
 
-  #sidebar-splitter {
+  :root[titlepreface="᠎"] #sidebar-splitter {
     display: none;
   }
 
-  #sidebar-box:not([hidden]) ~ #appcontent {
+  :root[titlepreface="᠎"] #sidebar-box:not([hidden]) ~ #appcontent {
     margin-left: var(--custom-sidebar-collapsed-width);
   }
 
-  #sidebar-box:not([hidden]) ~ #appcontent .findbar-container {
+  :root[titlepreface="᠎"] #sidebar-box:not([hidden]) ~ #appcontent .findbar-container {
     min-width: calc(100vw - 48px - var(--custom-sidebar-collapsed-width)) !important;
   }
 
